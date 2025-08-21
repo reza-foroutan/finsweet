@@ -1,0 +1,45 @@
+name: 🚀 Deploy to cPanel # اسم Workflow که توی GitHub Actions نمایش داده میشه
+
+# تعیین شرایط اجرای Workflow
+on:
+  push:
+    branches:
+      - main # وقتی روی branch main push کردی، Workflow اجرا میشه
+
+jobs:
+  build-and-deploy: # اسم job اصلی
+    runs-on: ubuntu-latest # سیستم عامل runner که workflow روی آن اجرا میشه
+
+    steps: # مراحل اجرای job
+      # مرحله 1: گرفتن کد پروژه
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v3
+        # این مرحله کد پروژه رو از GitHub روی runner دانلود می‌کنه
+
+      # مرحله 2: نصب Node.js
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+        # تعیین نسخه Node.js که روی runner نصب میشه
+
+      # مرحله 3: نصب پکیج‌های npm
+      - name: 📦 Install Dependencies
+        run: npm install
+        # نصب تمام پکیج‌های مورد نیاز پروژه
+
+      # مرحله 4: ساخت پروژه
+      - name: 🛠️ Build Project
+        run: npm run build
+        # ساخت پروژه Vite و تولید پوشه dist/ آماده برای آپلود
+
+      # مرحله 5: آپلود روی هاست cPanel با FTP
+      - name: 📤 Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }} # آدرس FTP هاست (در Secrets ذخیره شده)
+          username: ${{ secrets.FTP_USERNAME }} # یوزرنیم FTP
+          password: ${{ secrets.FTP_PASSWORD }} # پسورد FTP
+          protocol: ftps # اگر هاست فقط ftp ساده داره ftp بزن
+          local-dir: ./dist # پوشه محلی build شده
+          server-dir: /public_html # مسیر مقصد روی هاست
