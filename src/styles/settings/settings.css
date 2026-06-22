@@ -1,0 +1,30 @@
+/* تنظیمات اضافی برای فارسی */
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+html {
+  direction: rtl;
+  text-align: right;
+}
+
+body {
+  font-family: var(--font-family-Poppins);
+  background-color: var(--color-neutral-white);
+  overflow: auto;
+  min-height: var(--window-inner-height);
+}
+body,
+html {
+  direction: rtl;
+  height: 100%;
+  width: 100%;
+}
+/* رفع مشکل فاصله‌گذاری در فارسی */
+p,
+span,
+div {
+  text-align: right;
+}

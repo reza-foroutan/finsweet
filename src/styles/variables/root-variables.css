@@ -1,0 +1,6 @@
+:root {
+  --font-family-iranSans: "IRANSans", system-ui, sans-serif;
+  --font-family-Poppins: "Poppins", system-ui, sans-serif;
+  --breakpoint-3xl: 1920px;
+  --color-neutral-000: var(--color-neutral-000);
+}
