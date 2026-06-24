@@ -2,4 +2,10 @@
   --font-Poppins: var(--font-family-Poppins);
   --breakpoint-3xl: var(--breakpoint-3xl);
   --color-neutral-000: var(--color-neutral-000);
+  --color-royal-blue: var(--color-royal-blue);
+  --color-tint-blue: var(--color-tint-blue);
+  --color-dark-blue: var(--color-dark-blue);
+  --color-yellow: var(--color-yellow);
+  --color-grey: var(--color-grey);
+  --color-accent: var(--color-accent);
 }

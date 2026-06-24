@@ -6,8 +6,8 @@
   padding: 0;
 }
 html {
-  direction: rtl;
-  text-align: right;
+  direction: ltr;
+  text-align: left;
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 }
 body,
 html {
-  direction: rtl;
+  direction: ltr;
   height: 100%;
   width: 100%;
 }
@@ -26,5 +26,5 @@ html {
 p,
 span,
 div {
-  text-align: right;
+  text-align: left;
 }

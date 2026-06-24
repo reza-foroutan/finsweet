@@ -2,5 +2,11 @@
   --font-family-iranSans: "IRANSans", system-ui, sans-serif;
   --font-family-Poppins: "Poppins", system-ui, sans-serif;
   --breakpoint-3xl: 1920px;
-  --color-neutral-000: var(--color-neutral-000);
+  --color-neutral-000: #fff;
+  --color-royal-blue: #2405f2;
+  --color-tint-blue: #1c1e53;
+  --color-dark-blue: #282938;
+  --color-yellow: #fcd980;
+  --color-grey: #f4f6fc;
+  --color-accent: #eef4fa;
 }
